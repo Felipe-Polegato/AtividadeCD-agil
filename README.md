@@ -26,11 +26,6 @@
 https://miro.com/app/board/uXjVGwxLppM=/?share_link_id=898595359705
 
 ---------------------------------
-## Ferramentas Utilizadas
-    <img src="https://devicon-website.vercel.app/api/vscode/original.svg"></img>
-    <img src="https://devicon-website.vercel.app/api/python/original.svg"></img>
-
----------------------------------
 ## Critérios de Avaliação
     - Design Thinking
     - Requisitos
