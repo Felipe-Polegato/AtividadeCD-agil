@@ -52,16 +52,16 @@ def gerar_relatorio(resultados, recuperacao, top_student):
     # open = abre algum arquivo
     # 'w' = significa que algum arquivo vai ser criado e/ou aberto
     # encoding="utf-8" = codificação de caracteres (permite escrever acentos)
-    with open("resultado.txt", "w", encoding="utf-8") as arquivo:
+    with open("resultado.txt", "w", encoding="UTF-8") as arquivo:
 
         # arquivo.write grava texto ou algum dado em um arquivo aberto antes / é como se fosse um print que ainda não foi escrito
         arquivo.write("RELATÓRIO DE DESEMPENHO - ALUNOS SENAI 1.34\n")
         arquivo.write("=" * 30)
 
-        arquivo.write("MÉDIAS DOS ALUNOS\n")
+        arquivo.write("\nMÉDIAS DOS ALUNOS\n\n")
 
         for aluno in resultados:
-            arquivo.write(f"{aluno['nome']} ficou com média: {aluno['media']}\n")
+            arquivo.write(f"- {aluno['nome']} com Média: {aluno['media']}\n")
 
         arquivo.write("\n")
         arquivo.write("=" * 30)
@@ -75,11 +75,8 @@ def gerar_relatorio(resultados, recuperacao, top_student):
         else:
             arquivo.write("Nenhum aluno em recuperação\n")
 
-        arquivo.write("\n")
         arquivo.write("=" * 30)
         arquivo.write("\n")
 
-        arquivo.write(f"TOP STUDENT: {top_student}. Parabéns! Por toda sua dedicação nas aulas!\n")
-
-        arquivo.write("\n")
+        arquivo.write(f"TOP STUDENT: {top_student}.\nParabéns por toda sua dedicação nas aulas!\n")
         arquivo.write("=" * 30)
