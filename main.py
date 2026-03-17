@@ -28,7 +28,7 @@ print(f"\nTOP STUDENT: {top_student}\n")
 gerar_relatorio(resultados, recuperacao, top_student)
 
 print("=" * 30)
-print("Relatorio gerado com sucesso: resultado.txt")
+print("O Relatório foi gerado com sucesso: resultado.txt")
 print("=" * 30)
 
 print("Arquivo criado")
