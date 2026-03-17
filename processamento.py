@@ -46,3 +46,40 @@ def analisar_alunos(lista_alunos):
             top_student = nome
 
     return resultados, recuperacao, top_student
+
+def gerar_relatorio(resultados, recuperacao, top_student):
+    # with = Garante que o arquivo será fechado no final, mesmo que ocorra algum erro
+    # open = abre algum arquivo
+    # 'w' = significa que algum arquivo vai ser criado e/ou aberto
+    # encoding="utf-8" = codificação de caracteres (permite escrever acentos)
+    with open("resultado.txt", "w", encoding="utf-8") as arquivo:
+
+        # arquivo.write grava texto ou algum dado em um arquivo aberto antes / é como se fosse um print que ainda não foi escrito
+        arquivo.write("RELATÓRIO DE DESEMPENHO - ALUNOS SENAI 1.34\n")
+        arquivo.write("=" * 30)
+
+        arquivo.write("MÉDIAS DOS ALUNOS\n")
+
+        for aluno in resultados:
+            arquivo.write(f"{aluno['nome']} ficou com média: {aluno['media']}\n")
+
+        arquivo.write("\n")
+        arquivo.write("=" * 30)
+        arquivo.write("\n")
+        
+        arquivo.write("ALUNOS EM RECUPERAÇÃO\n")
+
+        if recuperacao:
+            for nome in recuperacao:
+                arquivo.write(f"- {nome}\n")
+        else:
+            arquivo.write("Nenhum aluno em recuperação\n")
+
+        arquivo.write("\n")
+        arquivo.write("=" * 30)
+        arquivo.write("\n")
+
+        arquivo.write(f"TOP STUDENT: {top_student}. Parabéns! Por toda sua dedicação nas aulas!\n")
+
+        arquivo.write("\n")
+        arquivo.write("=" * 30)
